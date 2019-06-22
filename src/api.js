@@ -157,3 +157,40 @@ export const getClubNameList = ({
 export const getClubPositionList = ({
     
 }) => fetch.get(`${Local_URL}/clubNumber/selClubPosId`)
+
+// 添加教评信息
+export const AddContent = ({
+    id,
+    stuId,
+    stuCourseid,
+    stuQuestionid,
+    stuType,
+    stuContent,
+}) => fetch.get(`${Local_URL}/Students/insertContent?id=${id}&stuId=${stuId}&stuCourseid=${stuCourseid}&stuQuestionid=${stuQuestionid}&stuType=${stuType}&stuContent=${stuContent}`)
+
+// 查看问题信息
+export const getQuestionInfoList = ({
+    
+}) => fetch.get(`${Local_URL}/Students/selectQuestion`)
+
+// 查询成绩信息
+export const getGradeInfoList = ({
+    gradeStuId,
+    gradeMajor,
+    gradeYear
+}) => fetch.get(`${Local_URL}/Students/selectgrade?gradeStuId=${gradeStuId}&gradeMajor=${gradeMajor}&gradeYear=${gradeYear}`)
+
+// 查询选课信息
+export const getSelectCourseList = ({
+    stuId
+}) => fetch.get(`${Local_URL}/Students/selectChoo?stuId=${stuId}`)
+
+// 查询考试信息
+export const getExamInfoList = ({
+    stuexamStuId
+}) => fetch.get(`${Local_URL}/Students/selectStuexam?stuexamStuId=${stuexamStuId}`)
+
+// 查询排课信息
+export const getArrangeCourseList = ({
+    stuId
+}) => fetch.get(`${Local_URL}/Students/selectCode?stuId=${stuId}`)

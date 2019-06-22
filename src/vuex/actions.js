@@ -23,7 +23,15 @@ import {
     getClubMemberList,
     EditClubMemInfo,
     getClubNameList,
-    getClubPositionList
+    getClubPositionList,
+
+    getGradeInfoList,
+    getSelectCourseList,
+    getExamInfoList,
+    getArrangeCourseList,
+
+    getQuestionInfoList,
+    AddContent
 } from '../api'
 
 
@@ -357,4 +365,87 @@ export default {
         })
     },
 
+    // 添加教评信息
+    
+    async AddContent({
+        commit
+    }, {
+        id,
+        stuId,
+        stuCourseid,
+        stuQuestionid,
+        stuType,
+        stuContent
+    }) {
+        return await AddContent({
+            id,
+            stuId,
+            stuCourseid,
+            stuQuestionid,
+            stuType,
+            stuContent
+        })
+    },
+ 
+    // 查看问题信息
+    async getQuestionInfoList({
+        commit
+    }, {
+        questionId,
+        stuQuestion
+    }) {
+        return await getQuestionInfoList({
+            questionId,
+            stuQuestion
+        })
+    }, 
+
+
+    // 查询成绩信息
+    async getGradeInfoList({
+        commit
+    }, {
+        gradeStuId,
+        gradeMajor,
+        gradeYear
+    }) {
+        return await getGradeInfoList({
+            gradeStuId,
+            gradeMajor,
+            gradeYear
+        })
+    },
+
+    // 查询选课信息
+    async getSelectCourseList({
+        commit
+    }, {
+        stuId
+    }) {
+        return await getSelectCourseList({
+            stuId
+        })
+    },
+
+    // 查询考试信息
+    async getExamInfoList({
+        commit
+    }, {
+        stuexamStuId
+    }) {
+        return await getExamInfoList({
+            stuexamStuId
+        })
+    },
+    
+    // 查询排课信息
+    async getArrangeCourseList({
+        commit
+    }, {
+        stuId
+    }) {
+        return await getArrangeCourseList({
+            stuId
+        })
+    },
 }

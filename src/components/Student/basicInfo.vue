@@ -19,7 +19,7 @@
         <el-table-column prop="politicalSt" label="政治面貌" align="center"></el-table-column>
         <el-table-column label="操作" align="center">
 
-          <template scope="scope">
+          <template slot-scope="scope">
 			        <el-button size="small"  @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
           </template>
         </el-table-column>
